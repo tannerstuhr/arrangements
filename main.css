@@ -1,3 +1,36 @@
-.hero-content {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;∏
+}
+nav{
+    background: #015a70;
+}
+.jumbotron {
     background-image: url("/img/wes-hicks-MEL-jJnm7RQ-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+}
+
+#heroText {
+    color: #79e4ff;
+}
+.browse {
+    background: linear-gradient(45deg, #79e4ff, #19587c);
+}
+.card {
+    margin: 10px;
+}
+.instruments {
+    justify-content: space-around;
+}
+.card-header{
+background: #ccf1fa;
+}
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 1px;
 }
