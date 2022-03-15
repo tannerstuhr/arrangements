@@ -1,0 +1,126 @@
+$color-primary: #79e4ff;
+$color-secondary: #015a70;
+$item-width: 50px;
+$n: 8;
+$item-width: 400px;
+$PI: 3.1415926589793233;
+$apothem: 483px;
+$theta: 2 * $PI / $n;
+$item-separation: 50px;
+$viewer-distance: 500px;
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+nav{
+    background-color: $color-secondary;
+}
+.jumbotron {
+    background-image: url("/img/blurrybackground.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+    padding: 100px 20px;
+    border-radius: 0;
+    border-bottom: solid;
+}
+
+#heroText {
+    color: $color-primary
+}
+
+img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 20%;
+  }
+
+.instrument-header{
+    h1{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    }
+}
+
+.carousel {
+    padding: 10px;
+
+    max-width: 100%;
+    perspective: $viewer-distance;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > * {
+      flex: 0 0 auto;
+    }
+
+    figure {
+      margin: 0;
+
+      width: $item-width;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      transform-origin: 50% 50% (-$apothem);
+
+        img {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 $item-separation / 2;
+            
+            &:not(:first-of-type) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform-origin: 50% 50% (-$apothem);
+            }
+
+            @for $i from 2 through $n {
+                &:nth-child(#{$i}) {
+                    transform: rotateY(#{($i - 1) * $theta}rad);
+                }
+            }
+        }
+        img:hover{
+            cursor: pointer;
+            border: solid;
+            padding: 1px;
+            background-color: white;
+            
+        }
+    }
+    nav {
+		display: flex;
+		justify-content: center;
+		margin: 20px 0 0;
+		background-color: white;
+		button {
+			flex: 0 0 auto;
+			margin: 0 5px;
+			
+			cursor: pointer;
+			
+			color: #333;
+			background: none;
+			border: 1px solid;
+			letter-spacing: 1px;
+			padding: 5px 10px;
+		}
+	}
+}
+
+
+.teacher-cta{
+    background-color: rgba(83, 206, 255, 0.589);
+}

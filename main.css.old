@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+nav{
+    background-color: #015a70;
+}
+.jumbotron {
+    background-image: url("/img/blurrybackground.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+    padding: 100px 20px;
+    border-radius: 0;
+
+}
+
+#heroText {
+    color: #79e4ff;
+}
+.browse {
+    background: linear-gradient(45deg, #79e4ff, #19587c);
+}
+.instruments .card {
+    margin: 10px;
+}
+.instruments {
+    justify-content: space-around;
+}
+.instruments .card .card-header{
+background: #ccf1fa;
+}
+.instruments .card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 1px;
+}
+.teacher-cta{
+    background-color: rgba(83, 206, 255, 0.589);
+}
+
+img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 20%;
+  }

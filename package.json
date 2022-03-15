@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lite": "lite-server",
-    "start": "npm run lite",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "node-sass -o css/ css/",
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
   },
   "repository": {
     "type": "git",
@@ -15,7 +18,10 @@
   "author": "Tanner Stuhr",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "node-sass": "^6.0.1",
+    "onchange": "^7.0.0",
+    "parallelshell": "3.0.1"
   },
   "bugs": {
     "url": "https://github.com/tannerstuhr/arrangements/issues"
@@ -25,7 +31,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
+    "jquery": ">=1.8.3",
     "popper.js": "^1.16.1"
   }
 }
